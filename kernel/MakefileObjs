@@ -1,0 +1,38 @@
+
+OBJSCXX = \
+	point.o \
+	boot.o \
+	image.o \
+	font.o \
+	memory.o \
+	debug.o \
+	desctable.o \
+	int.o \
+	keyboard.o \
+	message.o \
+	sheet.o \
+	__cxa_pure_virtual.o \
+	kbc.o \
+	mouse.o \
+	timer.o \
+	pit.o \
+	mtask.o \
+	specialtask.o \
+	cpuexceptions.o \
+	window.o \
+	keycode.o \
+	scancode.o \
+	scancode1.o \
+	scancode2.o \
+	console.o \
+	TaskFuncs.o \
+	calc.o \
+	gui/Window.o \
+	gui/Label.o \
+	gui/TextBox.o \
+#	FDC.o
+
+OBJS = \
+	funcs.o \
+	hankaku.o \
+	$(OBJSCXX)

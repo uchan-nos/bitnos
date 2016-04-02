@@ -1,0 +1,53 @@
+##############################################
+# edit following macros for your environment #
+##############################################
+
+ROOT_PATH    = $(HOME)/workspace/bitnos
+TOLSET_PATH  = $(HOME)/tolset_h
+GCC_BIN_PATH = $(HOME)/gcc-5.3.0-i686-elf/bin
+GCC_PREFIX   = i686-elf-
+
+#JOINSYS  = copy /B ..\boot\boot.bin + bitnos.hrb
+JOINSYS  = cat ../boot/boot.bin bitnos.hrb >
+
+CPPFLAGS = -I$(ROOT_PATH)/lib/golibc -I$(ROOT_PATH)/include
+CFLAGS   = -Os -Wall -fno-common -fno-builtin -ffreestanding
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+
+COPY     = cp
+DEL      = rm -f
+EDIMG    = $(TOLSET_PATH)/z_tools/edimg.exe
+IMGTOL   = $(TOLSET_PATH)/z_tools/imgtol.exe
+MAKEFONT = $(TOLSET_PATH)/z_tools/makefont.exe
+CC       = $(GCC_BIN_PATH)/$(GCC_PREFIX)gcc
+CXX      = $(GCC_BIN_PATH)/$(GCC_PREFIX)g++
+OBJCOPY  = $(GCC_BIN_PATH)/$(GCC_PREFIX)objcopy
+LD       = $(GCC_BIN_PATH)/$(GCC_PREFIX)ld
+AR       = $(GCC_BIN_PATH)/$(GCC_PREFIX)ar
+MAKE     = /usr/bin/make -r
+NASM     = /usr/bin/nasm
+QEMU     = /usr/bin/qemu-system-i386
+
+##############################################
+
+# 一般生成規則
+%.o: %.c
+	$(CC) -c $(CPPFLAGS) $(CFLAGS) -o $@ $<
+
+%.o: %.cpp
+	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -o $@ $<
+
+%.o: %.asm
+	$(NASM) -f elf32 -o $@ -l $*.lst $<
+
+%.s: %.c
+	$(CC) -S $(CPPFLAGS) $(CFLAGS) -o $@ $<
+
+%.s: %.cpp
+	$(CXX) -S $(CPPFLAGS) $(CXXFLAGS) -o $@ $<
+
+.%.d: %.c
+	$(CC) $(CPPFLAGS) -MM $< > $@
+
+.%.d: %.cpp
+	$(CXX) $(CPPFLAGS) -MM $< > $@
