@@ -12,9 +12,9 @@ class Image;
 
 class Window
 {
-public:
-  static void Make(Image* img);
-  static void Make(Image* img, const char* title);
+    public:
+        static void Make(Image* img);
+        static void Make(Image* img, const char* title);
 };
 
 #endif /* WINDOW_H_ */

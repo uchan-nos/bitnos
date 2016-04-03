@@ -24,37 +24,37 @@
 
 struct SegmentDescriptor
 {
-  uint16_t limitL;
-  uint16_t baseL;
-  uint8_t baseM;
-  uint8_t type;
-  uint8_t limitH;
-  uint8_t baseH;
+    uint16_t limitL;
+    uint16_t baseL;
+    uint8_t baseM;
+    uint8_t type;
+    uint8_t limitH;
+    uint8_t baseH;
 
-  void Init(uint32_t limit, uint32_t base, uint8_t segtype, uint8_t seg32type, uint8_t dpl);
+    void Init(uint32_t limit, uint32_t base, uint8_t segtype, uint8_t seg32type, uint8_t dpl);
 };
 
 struct GateDescriptor
 {
-  uint16_t offsetL;
-  uint16_t selector;
-  uint8_t count;
-  uint8_t type;
-  uint16_t offsetH;
+    uint16_t offsetL;
+    uint16_t selector;
+    uint8_t count;
+    uint8_t type;
+    uint16_t offsetH;
 
-  void Init(uint32_t offset, uint16_t selector, uint8_t count, uint8_t type, uint8_t dpl);
+    void Init(uint32_t offset, uint16_t selector, uint8_t count, uint8_t type, uint8_t dpl);
 };
 
 class GDT : private Uncopyable
 {
-public:
-  static void Init();
+    public:
+        static void Init();
 };
 
 class IDT : private Uncopyable
 {
-public:
-  static void Init();
+    public:
+        static void Init();
 };
 
 #endif /* SEGMENT_H_ */

@@ -16,27 +16,27 @@ class Task;
 
 extern "C"
 {
-  void inthandler21(int* esp);
+    void inthandler21(int* esp);
 }
 
 class Keyboard : private Uncopyable
 {
-  //static Queue<Message>* queue;
-  static Task* handleTask;
+    //static Queue<Message>* queue;
+    static Task* handleTask;
 
-public:
-  //static void Init(Queue<Message>* queue);
-  static void Init(Task* handleTask);
+    public:
+    //static void Init(Queue<Message>* queue);
+    static void Init(Task* handleTask);
 
-  static void IntHandler();
+    static void IntHandler();
 };
 
 void TaskKeyboardFunc();
 namespace TaskKeyboard
 {
-void Init(void* obj);
-void PreProc(void* obj);
-void Proc(void* obj, Message* msg);
+    void Init(void* obj);
+    void PreProc(void* obj);
+    void Proc(void* obj, Message* msg);
 }
 
 

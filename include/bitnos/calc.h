@@ -10,8 +10,8 @@
 
 namespace Calc
 {
-int RPNCalc(const char* exp);
-int Calc(const char* exp);
+    int RPNCalc(const char* exp);
+    int Calc(const char* exp);
 }
 
 #endif /* CALC_H_ */

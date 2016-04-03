@@ -25,7 +25,7 @@ typedef void (*TaskFuncProc)(void* obj, Message* msg);
 void GeneralFunction(void* obj, TaskFuncInit init, TaskFuncPreProc preproc, TaskFuncProc proc);
 
 void SetTaskFuncs(
-    TSS32* tss, uintptr_t stackTop, uintptr_t stackSize,
-    TaskFuncInit init, TaskFuncPreProc preproc, TaskFuncProc proc);
+        TSS32* tss, uintptr_t stackTop, uintptr_t stackSize,
+        TaskFuncInit init, TaskFuncPreProc preproc, TaskFuncProc proc);
 
 #endif /* TASKFUNCS_H_ */

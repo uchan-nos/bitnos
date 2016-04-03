@@ -37,8 +37,8 @@
 
 extern "C"
 {
-  void BNosMain();
-  void BNosStartup();
+    void BNosMain();
+    void BNosStartup();
 }
 
 #endif /* BITNOS_H_ */

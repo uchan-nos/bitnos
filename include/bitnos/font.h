@@ -12,28 +12,28 @@
 
 class BitmapFont
 {
-  int width; // 1文字の幅
-  int height; // 1文字の高さ
-  void* data; // フォントデータの開始アドレス
-  int dataSize; // フォントデータの容量(byte)
-  int increment; // 1文字の容量(byte)
-public:
-  void Init(int width, int height, void* data, int dataSize, int increment);
+    int width; // 1文字の幅
+    int height; // 1文字の高さ
+    void* data; // フォントデータの開始アドレス
+    int dataSize; // フォントデータの容量(byte)
+    int increment; // 1文字の容量(byte)
+    public:
+    void Init(int width, int height, void* data, int dataSize, int increment);
 
-  int GetWidth()
-  {
-    return this->width;
-  }
+    int GetWidth()
+    {
+        return this->width;
+    }
 
-  int GetHeight()
-  {
-    return this->height;
-  }
+    int GetHeight()
+    {
+        return this->height;
+    }
 
-  void* GetDataPtr(int c)
-  {
-    return (uint8_t*)this->data + (c * this->increment);
-  }
+    void* GetDataPtr(int c)
+    {
+        return (uint8_t*)this->data + (c * this->increment);
+    }
 
 };
 

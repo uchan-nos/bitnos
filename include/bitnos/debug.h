@@ -16,16 +16,16 @@
  */
 class Debug
 {
-  //static Image* imageDebug;
-  static Sheet* sheetDebug;
-  static BitmapFont* font;
-  static int line;
-  static int lineMax;
-  static int lineLength;
-public:
-  //static void Init(Image* imageDebug, BitmapFont* font);
-  static void Init(Sheet* sht, BitmapFont* font, int line, int len);
-  static void WriteLine(const char* format, ...);
+    //static Image* imageDebug;
+    static Sheet* sheetDebug;
+        static BitmapFont* font;
+        static int line;
+        static int lineMax;
+        static int lineLength;
+    public:
+           //static void Init(Image* imageDebug, BitmapFont* font);
+           static void Init(Sheet* sht, BitmapFont* font, int line, int len);
+               static void WriteLine(const char* format, ...);
 };
 
 
